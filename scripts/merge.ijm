@@ -4,7 +4,7 @@
 // =======================================================
 
 // Define the input directory containing the paired images
-inputDir = "C:\\Users\\marin\\Documents\\LabIF\\Analise 4\\IdosoGH\\";
+inputDir = "C:\\Users\\marin\\Documents\\LabIF\\Analise 4\\Imagens\\IdosoGH\\";
 list = getFileList(inputDir);
 
 // Loop through all files
