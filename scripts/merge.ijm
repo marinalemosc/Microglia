@@ -1,6 +1,5 @@
 // =======================================================
 // Macro: Merge DAPI + IBA images and save as RGB colored
-// Author: ChatGPT — optimized for mouse microglia morphology studies
 // =======================================================
 
 // Define the input directory containing the paired images
