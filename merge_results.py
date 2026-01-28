@@ -5,7 +5,8 @@ import os
 import re
 
 # Directory containing all CSV result files
-DATA_DIR = r"C:\Users\marin\Documents\LabIF\Analise 4\Imagens\Controle\Idoso - CTRL 1 E - T=0"
+DATA_DIR = r"C:\Users\marin\Documents\LabIF\Analise 4\Imagens\Controle\Idoso - CTRL 1 E 2 - T=0"
+
 
 # Name of the final merged output file
 OUTPUT_FILE = "Results_byROI.csv"

@@ -8,7 +8,7 @@
 // =======================================================
 
 // Directory containing the images
-dir = "C:\\Users\\marin\\Documents\\LabIF\\Analise 4\\Imagens\\Controle\\Idoso - CTRL 1 E - T=0\\";
+dir = "C:\\Users\\marin\\Documents\\LabIF\\Analise 4\\Imagens\\Controle\\Idoso - CTRL 1 E 2 - T=0\\";
 
 // Get list of files in directory
 list = getFileList(dir);
@@ -43,7 +43,10 @@ for (i = 0; i < list.length; i++) {
         // -----------------------------
         // Save ONLY the "Results" table
         // -----------------------------
-        resultsCSV = replace(filename, "IBAClean", "Skeleton_results");
+        baseName = replace(filename, ".tiff", "");
+        baseName = replace(baseName, ".tif", "");
+        resultsCSV = replace(baseName, "IBAClean", "Skeleton_results");
+
 
         if (isOpen("Results")) {
             selectWindow("Results");

@@ -3,7 +3,7 @@
 // =======================================================
 
 // Directory containing IBAClean images
-dir = "C:\\Users\\marin\\Documents\\LabIF\\Analise 4\\Imagens\\Controle\\Idoso - CTRL 1 E - T=0\\";
+dir = "C:\\Users\\marin\\Documents\\LabIF\\Analise 4\\Imagens\\Controle\\Idoso - CTRL 1 E 2 - T=0\\";
 
 // Get list of files
 list = getFileList(dir);
