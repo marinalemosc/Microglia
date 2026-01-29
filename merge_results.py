@@ -5,16 +5,15 @@ import os
 import re
 
 # Directory containing all CSV result files
-DATA_DIR = r"C:\Users\marin\Documents\LabIF\Analise 4\Imagens\Controle\Idoso - CTRL 1 E 2 - T=0"
+DATA_DIR = r"C:\Users\marin\Documents\LabIF\Analise 4\Imagens\Controle\Idoso - CTRL 1 E - T=0"
 
-
-# Name of the final merged output file
-OUTPUT_FILE = "Results_byROI.csv"
 
 # Regular expression used to extract the ROI identifier
 # Example matched string:
 # "Idoso - CTRL 1 E - T=0 C=2 ROI1"
-ROI_PATTERN = r"(Idoso\s-\sCTRL\s1\sE\s-\sT=0\sC=2\sROI\d+)"
+ROI_PATTERN = r"(.+?\sROI\d+)"
+
+
 
 # =====================================================
 # MAIN PROCESSING
@@ -32,6 +31,7 @@ for file in os.listdir(DATA_DIR):
 
     # Extract ROI name from the filename using regex
     match = re.search(ROI_PATTERN, file)
+
 
     # If ROI pattern is not found, skip the file
     if not match:
@@ -69,6 +69,7 @@ for file in os.listdir(DATA_DIR):
     else:
         roi_tables[roi_name] = df
 
+
 # =====================================================
 # FINAL MERGE (ALL ROIs)
 # =====================================================
@@ -87,6 +88,9 @@ final_df = final_df[columns_order]
 # =====================================================
 # SAVE OUTPUT
 # =====================================================
+
+# Name of the final merged output file
+OUTPUT_FILE = os.path.basename(DATA_DIR) + " Results_byROI.csv"
 
 # Full path to output file
 output_path = os.path.join(DATA_DIR, OUTPUT_FILE)
