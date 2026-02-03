@@ -3,10 +3,18 @@
 import pandas as pd
 import os
 import re
+import tkinter as tk
+from tkinter import filedialog
 
-# Directory containing all CSV result files
-DATA_DIR = r"C:\Users\marin\Documents\LabIF\Analise 4\Imagens\Controle\Idoso - CTRL 1 E - T=0"
+# Opens tk but hides the empty window
+root = tk.Tk()
+root.withdraw()
 
+# Asks for the Directory containing all CSV result files
+DATA_DIR = filedialog.askdirectory()
+
+if not DATA_DIR:
+    raise SystemExit("No directory selected.")
 
 # Regular expression used to extract the ROI identifier
 # Example matched string:
