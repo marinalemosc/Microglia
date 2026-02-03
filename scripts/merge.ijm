@@ -2,8 +2,8 @@
 // Macro: Merge DAPI + IBA images and save as RGB colored
 // =======================================================
 
-// Define the input directory containing the paired images
-inputDir = "C:\\Users\\marin\\Documents\\LabIF\\Analise 4\\Imagens\\IdosoGH\\";
+// Ask for directory containing the images
+inputDir = getDirectory("Choose directory");
 list = getFileList(inputDir);
 
 // Loop through all files

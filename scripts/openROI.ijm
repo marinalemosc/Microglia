@@ -2,11 +2,11 @@
 // Macro: Open all images for a specific ROI
 // =======================================================
 
-// Define folder path
-dir = "C:\\Users\\marin\\Documents\\LabIF\\Analise 4\\Imagens\\Controle\\Idoso - CTRL 1 E - T=0\\";
+// Ask for directory containing the images
+Dir = getDirectory("Choose directory");
 
 // Define ROI number to open (change this number to open another ROI)
-roiNumber = 1;  // e.g., ROI1
+roiNumber = getNumber("ROI", "ROIX");
 roiString = "ROI" + roiNumber;
 
 // Build filenames

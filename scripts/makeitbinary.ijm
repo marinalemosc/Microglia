@@ -7,7 +7,8 @@
 // - Closes the processed image
 // =======================================================
 
-dir = "C:\\Users\\marin\\Documents\\LabIF\\Analise 4\\Imagens\\Jovem\\Jovem 1 E 2 - T=0\\";
+// Ask for directory containing the images
+dir = getDirectory("Choose directory");
 
 // Get file list
 list = getFileList(dir);

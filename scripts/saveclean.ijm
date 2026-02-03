@@ -1,17 +1,17 @@
 // =======================================================
-// Macro: Save manually cleaned binary images as "Clean"
+// Macro: Save cleaned binary images as "Clean"
 // =======================================================
 
 // Get the directory associated with the file
         dir = getDirectory("current");
         
 // Define ROI number (change this value when needed!!!)
-roiNumber = 25;
+roiNumber = getNumber("ROI", "ROIX");
 roiString = "ROI" + roiNumber;
 
 // Build expected filenames for input
-dapiBinary = "Idoso - CTRL 1 E 2 - T=0 C=2 " + roiString + " DAPIBinary.tif";
-ibaBinary  = "Idoso - CTRL 1 E 2 - T=0 C=2 " + roiString + " IBABinary.tif";
+dapiBinary = "Jovem 1 E 2 - T=0 C=2 " + roiString + " DAPIBinary.tif";
+ibaBinary  = "Jovem 1 E 2 - T=0 C=2 " + roiString + " IBABinary.tif";
 
 // Build new names for saving
 dapiClean = replace(dapiBinary, "DAPIBinary", "DAPIClean");

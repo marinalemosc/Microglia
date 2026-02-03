@@ -7,8 +7,8 @@
 // - Saves ONLY the "Results" table as CSV
 // =======================================================
 
-// Directory containing the images
-dir = "C:\\Users\\marin\\Documents\\LabIF\\Analise 4\\Imagens\\Controle\\Idoso - CTRL 1 E 2 - T=0\\";
+// Ask for directory containing the images
+dir = getDirectory("Choose directory");
 
 // Get list of files in directory
 list = getFileList(dir);
