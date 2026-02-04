@@ -5,13 +5,12 @@
 // Get the directory associated with the file
         dir = getDirectory("current");
         
-// Define ROI number (change this value when needed!!!)
-roiNumber = getNumber("ROI", "ROIX");
-roiString = "ROI" + roiNumber;
+// Ask for image name 
+imageName = getString("Image name (with ROI, without sufix)", "GH 1 E 2 2 - T=0 C=2 ROI");
 
 // Build expected filenames for input
-dapiBinary = "Jovem 1 E 2 - T=0 C=2 " + roiString + " DAPIBinary.tif";
-ibaBinary  = "Jovem 1 E 2 - T=0 C=2 " + roiString + " IBABinary.tif";
+dapiBinary = imageName + " DAPIBinary.tif";
+ibaBinary  = imageName + " IBABinary.tif";
 
 // Build new names for saving
 dapiClean = replace(dapiBinary, "DAPIBinary", "DAPIClean");
@@ -24,3 +23,6 @@ ibaClean  = replace(ibaBinary, "IBABinary", "IBAClean");
 //Save IBA image
 	selectWindow(ibaBinary);
     saveAs("Tiff", dir + ibaClean);
+
+// Macro to close all open images
+run("Close All");
