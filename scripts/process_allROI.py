@@ -56,13 +56,15 @@ def normalize_image_index(df):
 # Normalize processed_df 
 processed_df = normalize_image_index(processed_df)
 
+# Creating a global ROI index with a group tag in the end 
+processed_df["Global_idx"] = processed_df.index + 1
+
 # Rearranging the columns for clear understanding 
-ordered_cols = ["ROI Name","group","mouse_id","section","image_idx","ROI","image_raw","Image Name",]
+ordered_cols = ["ROI Name","group","mouse_id","section","image_idx","ROI","Global_idx","image_raw","Image Name",]
 
 processed_df = processed_df.reindex(
     columns=ordered_cols + [c for c in processed_df.columns if c not in ordered_cols]
 )
-
 
 # Output file 
 output_path = Path(csv_path).with_name("processed_results.csv")
