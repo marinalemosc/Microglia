@@ -29,12 +29,23 @@ def keep_calculated(df):
 # Runs keep_calculated 
 cleaned_df = keep_calculated(cleaned_df)
 
-# Create txt file with all remaining columns after cleaning
-columns_series = pd.Series(cleaned_df.columns, name="column_name")
+# Replacing "Not Calculated" strings for NaN 
+cleaned_df = cleaned_df.replace(
+    to_replace=r"(?i)^Not Calculated$",
+    value=pd.NA,
+    regex=True
+)
+
+# Create dataframe with missing value proportion per column
+cleaned_report = (
+    cleaned_df.isna()
+    .mean()
+    .reset_index()
+)
 
 # Output files
-output_path1 = Path(csv_path).with_name("cleaned_results.csv")
-output_path2 = Path(csv_path).with_name("cleaned_columns.txt")
+output_path = Path(csv_path).with_name("cleaned_results.csv")
+cleaned_df.to_csv(output_path, index=False)
 
-cleaned_df.to_csv(output_path1, index=False)
-columns_series.to_csv(output_path2, index=False, header=True)
+output_path2 = Path(csv_path).with_name("cleaned_report.csv")
+cleaned_report.to_csv(output_path2, index=False)
