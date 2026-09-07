@@ -23,13 +23,12 @@ processed_df = processed_df.rename(columns={"ROI": "Image Name"})
 # Creating a column "ROI Name" to standardize filenames for regex parsing
 processed_df["ROI Name"] = (
     processed_df["Image Name"]
-        .str.replace("- CTRL ", "", regex=False)
         .str.replace("- T=0 C=2 ", "", regex=False)
 )
 
 # Extract data from ROI Name column  
 pattern = (
-    r"(?P<group>Jovem|Idoso|GH)\s+"
+    r"(?P<group>Jovem|GH|CTRL)\s+"
     r"(?P<mouse_id>\d+)\s+"
     r"(?P<section>[EMI])\s+"
     r"(?:(?P<image_raw>\d+(?:\s+\d+)*)\s+)?"

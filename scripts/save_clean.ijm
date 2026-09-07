@@ -6,7 +6,7 @@
         dir = getDirectory("current");
         
 // Ask for image name 
-imageName = getString("Image name (with ROI, without sufix)", "GH 1 E 2 2 - T=0 C=2 ROI");
+imageName = getString("Image name (with ROI number, without sufix)", "Image Name");
 
 // Build expected filenames for input
 dapiBinary = imageName + " DAPIBinary.tif";
